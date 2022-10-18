@@ -4,11 +4,13 @@ import Logo from './components/Logo';
 import OptionsMenu from './components/OptionsMenu';
 import PostList from './components/PostList';
 import Post from './components/Post';
-import { Routes, Route } from 'react-router-dom';
-import { Link } from "react-router-dom";
-import Button from 'react-bootstrap/Button';
+import { Routes, Route, Link, useSearchParams } from 'react-router-dom';
+import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
+
+  const [ searchParams, setSearchParams ] = useSearchParams({search: ''});
+
   return (
     <div>
       <header>
@@ -21,11 +23,10 @@ function App() {
         <OptionsMenu />
       </header>
       <main>
-        <Button>my butt</Button>
         <Routes>
           <Route path='/' element={<h2>Search for a Subreddit</h2>}/>
-          <Route path='/search' element={<PostList />}/>
-          <Route path='/post' element={<Post />}/>
+          <Route path='/search-results' element={<PostList searchParams={searchParams.get('search')} />}/>
+          <Route path='/post' element={<Post redditUrl={searchParams.get('redditUrl')} />}/>
         </Routes>
       </main>
       <footer>
@@ -37,4 +38,3 @@ function App() {
 
 export default App;
 
-//todo tell user that the page is loading

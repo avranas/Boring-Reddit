@@ -1,25 +1,26 @@
 import { Link } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
-import { loadPage } from '../slices/currentPostSlice';
 
 const PostLink = (props) => {
-  const dispatch = useDispatch();
-
-  const handleClick = () => {
-    dispatch(loadPage(props));
-  }
 
   return (
     <div className="post-link">
-      <div className='ups'>
-        <p>{props.ups}</p>
-      </div>
-      <div className='link'>
-        <Link to='/post' onClick={handleClick}>{props.title}</Link>
-      </div>
-      <div className='author'>
-        <p>u/{props.author}</p>
-        </div>
+      <tr key={props.title}>
+        <td className='ups'>
+          <p>{props.ups}</p>
+        </td>
+        <td className='link'>
+          <tr>
+            <td>
+              <Link to={`/post?redditUrl='${props.redditUrl}'`}>{props.title}</Link>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p>u/{props.author}</p>
+            </td>
+          </tr>
+        </td>
+      </tr>
     </div>
   );
 }
