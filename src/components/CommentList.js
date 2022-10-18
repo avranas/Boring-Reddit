@@ -5,20 +5,23 @@ const CommentList = ({comments}) => {
   return (
     <div className="comment-list">
       <h2>Comments</h2>
-      <ul>{
+      <table className='table table-striped'>
+        <tbody>
+        {
         comments.map( i => {
           return (
-            <li key={i.body}>
+            <tr key={i.body}>
               <Comment
                 body={i.body}
                 ups={i.ups}
                 author={i.author}
               />
-            </li>
+            </tr>
           )
         })
-      }
-      </ul>
+        }
+        </tbody>
+      </table>
     </div>
   );
 }

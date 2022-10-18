@@ -8,15 +8,22 @@ const Comment = (props) => {
 
   return (
     <div className="comment">
-      <div className="ups">
+      <td className="ups">
         <p>{props.ups}</p>
-      </div>
-      <div className="comment-body">
-        {parse(bodyAsHtml)}
-      </div>
-      <div className="author">
-        <p>u/{props.author}</p>
-      </div>
+      </td>
+      <td>
+        <tr>
+          <td className="author">
+            <p>u/{props.author}</p>
+            <hr/>
+          </td>
+        </tr>
+        <tr>
+          <td className="comment-body">
+            {parse(bodyAsHtml)}
+          </td>
+        </tr>
+      </td>
     </div>
   );
 }

@@ -14,24 +14,10 @@ export const getSearchResults = createAsyncThunk(
         const postData = json.data.children[i].data;
         const url = postData.permalink;
         const editedUrl = url.slice(0, -1) //There's a '/' at the end and I need to remove it
-        const redditUrl = 'https://www.reddit.com' + editedUrl + '.json';
-        const fileExtension = postData.url.substring(postData.url.length - 4);
-        let newPostType = "TitleOnly";
-        if (fileExtension === ".jpg" || 
-          fileExtension === ".png" ||
-          fileExtension === ".gif") {
-            newPostType = "Image";
-          }
-        else if (postData.selftext !== "") {
-          newPostType = "Text";
-        } else if (postData.domain.substring(0, 5) !== "self."){
-          newPostType = "Link"
-        }
+        const redditUrl = editedUrl;
         const newPost = {
           title: postData.title,
           redditUrl: redditUrl,
-          link: postData.url,
-          postType: newPostType,
           author: postData.author,
           ups: postData.ups
         }
