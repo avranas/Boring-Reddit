@@ -71,3 +71,4 @@ const searchResultsSlice = createSlice({
 export const selectSearchResults = state => state.searchResults.searchResults;
 export const { addResults, clearResults } = searchResultsSlice.actions;
 export default searchResultsSlice.reducer;
+

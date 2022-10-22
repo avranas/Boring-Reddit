@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { selectCurrentPost, loadPage } from '../slices/currentPostSlice';
 import { selectOptions } from '../slices/optionsSlice';
 import { useNavigate } from 'react-router-dom';
+import LoadIcon from '../components/LoadIcon';
 
 const parse = require('html-react-parser');
 const MarkdownIt = require('markdown-it');
@@ -30,36 +31,46 @@ const Post = ({redditUrl}) => {
     navigate(-1);
   }
 
+  let postBody = [];
+  if (currentPost.isLoading) {
+    postBody.push(<LoadIcon/>);
+  } else if (currentPost.hasError) {
+    postBody.push(<h3>An error occured while loading the post :(</h3>);
+  } else {
+    let newElement = null;
+    switch (currentPost.postType) {
+      case 'Image':
+        newElement =
+          <a href={currentPost.link}>
+            <img src={currentPost.link} alt="post" className="post-image" />
+          </a>
+        break;
+      case 'Text':
+        parse(bodyAsHtml);
+        break;
+      case 'Link':
+        newElement = <p><a href={currentPost.link}>Click here</a></p>
+        break;
+    }
+    postBody.push(newElement);
+    if (options.commentsOn) {
+      postBody.push(<CommentList comments={currentPost.comments}/>);
+    }
+  }
+
+
   return (
-    <div className="post container">
-      <div className='post-head'>
-        <table className='table'>
-          <tr>
-            <td>
-              <button onClick={handleBackButtonClick} className='back-button'></button>
-            </td>
-            <td>
-              <p>u/{currentPost.author}</p>
-            </td>
-          </tr>
-        </table>
-        <h2>{currentPost.title}</h2>
+    <div className="container">
+        <div class="row">
+          <div class="back-button-containter col-1">
+            <button onClick={handleBackButtonClick} className='back-button text-center'></button>
+          </div>
+          <div class="col">
+            <span class="post-author align-bottom">u/{currentPost.author}</span>
+            <h2 id="post-spacing">{currentPost.title}</h2>
+          </div>
       </div>
-      {currentPost.isLoading && <h3>Loading...</h3>}
-      {currentPost.hasError && <h3>An error occured while loading the post :(</h3> }
-      {
-        currentPost.postType === "Image" ?
-        <img src={currentPost.link} alt="post" className="post-image" />
-        : currentPost.postType === "Text" ?
-        parse(bodyAsHtml)
-        : currentPost.postType === "Link" ?
-        <p><a href={currentPost.link}>Click here</a></p>
-        : null
-      }
-      {
-        !options.commentsOff && <CommentList comments={currentPost.comments}/>
-      }
-      {currentPost.isLoading && <h3>Loading...</h3>}
+      {postBody}
     </div>
   );
 }

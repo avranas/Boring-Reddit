@@ -12,38 +12,52 @@ header {
   padding-left: 2rem;
 }
 
-
-.options-button button{
+#options-button{
   margin: 1rem;
-  height: 3rem;
-  width: 4rem;
 }
 
-.options-menu {
+#options-button:hover{
+  color: black;
+}
+
+#options {
+  position: relative;
+}
+
+#options-menu {
   position: absolute;
-  color: white;
-  background-color:darkslateblue;
+  background-color:rgb(255, 255, 255);
   right: 1rem;
+  top: 3.5rem;
   padding: 1rem;
   height: 12rem;
-  line-height: 2rem;
+  width: 9rem;
+  line-height: 2.5rem;
   text-align: center;
+  border-radius: 0.25rem;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.3);
+  opacity: 1;
+  animation: 150ms ease-out 0s 1 slideIn;
 }
 
-#submit-options {
-  height: 2rem;
-  width: 4rem;
+@keyframes slideIn {
+  0% {
+    transform: translateY(-0.5rem);
+  }
+  100% {
+    transform: translateX(0);
+  }
 }
 
-
-.logo img {
+#logo img {
   width: 16rem;
 }
 
-.search-logo-wrap {
+#search-logo-wrap {
   display: flex;
   align-items: center;
 }
+
 td {
   padding: 1rem;
 }
@@ -56,15 +70,57 @@ td {
   padding: 0.5rem;
 }
 
+footer {
+  width: 100%;
+  text-align: right;
+}
+
+footer p {
+  justify-content: center;
+  padding-right: 1rem;
+}
+
+.post-image {
+  margin: 2rem;
+  max-height: 40rem;
+}
+
+.upvotes p {
+  margin: 1rem;
+  position: relative;
+  top: 2.1rem;
+  left: 0rem;
+}
+
+.upvotes img{
+  max-width: 1.3rem;
+  max-height: 1.3rem;
+  position: relative;
+  left: 1rem;
+  top: 3rem;
+}
+
+.back-button-containter {
+  display: flex;
+}
+
+.back-button-containter button{
+  justify-content: center;
+
+}
+
 .back-button {
   background-image: url('./images/back.png');
-  border-radius: 0.5rem;
-  background-size: 50px 25px;
-  width: 50px;
-  height: 25px;
-  border: 2px solid;
+  background-size: 5rem, 5rem;
+  width: 5rem;
+  height: 5rem;
   transition-duration: 0.05s;
   filter: brightness(1.2);
+  border: none;
+  position: relative;
+  top: 0.1rem;
+  left: 0.7rem;
+
 }
 
 .back-button:hover {
@@ -75,19 +131,50 @@ td {
   filter: brightness(0.5);
 }
 
-.options-button button{
-  margin: 1rem;
-  height: 3rem;
-  width: 4rem;
+#post-spacing{
+  padding-bottom: 1rem;
 }
 
-.options-menu {
-  position: absolute;
-  color: white;
-  background-color:darkslateblue;
-  right: 1rem;
-  padding: 1rem;
-  height: 12rem;
-  line-height: 2rem;
-  text-align: center;
+.post-author {
+  font-size: 0.75rem;
+}
+
+.form-check-input {
+  position: relative;
+  left: 2.25rem;
+  bottom: 0.25rem;
+}
+
+.parent {
+  background-color: hsla(200, 100%, 20%);
+  height: 400px;
+  width: 400px;
+}
+
+.child {
+  background-color: red;
+  height: 50%;
+  width: 50%;
+  transition: 1s;
+}
+
+.parent:focus .child {
+  background-color: green;
+  transform: translateY(100%);
+}
+
+#load img{
+  margin: 2rem;
+  height: 4rem;
+  width: 4rem;
+  animation: rotation 2s infinite linear;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }

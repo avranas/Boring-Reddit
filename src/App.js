@@ -9,12 +9,12 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
 
-  const [ searchParams, setSearchParams ] = useSearchParams({search: ''});
+  const [ searchParams ] = useSearchParams({search: ''});
 
   return (
     <div>
       <header>
-        <div className="search-logo-wrap">
+        <div id="search-logo-wrap">
           <Link to="/">
             <Logo />
           </Link>
@@ -30,7 +30,7 @@ function App() {
         </Routes>
       </main>
       <footer>
-
+        <p>Made with ❤️ by Alex Vranas</p>
       </footer>
     </div>
   );
@@ -38,3 +38,5 @@ function App() {
 
 export default App;
 
+//TODO: What to make look better:
+  //Make sure it looks good on mobile and tablet :(

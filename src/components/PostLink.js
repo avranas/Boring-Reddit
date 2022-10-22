@@ -1,14 +1,17 @@
 import { Link } from 'react-router-dom';
+import updoot from '../images/updoot.png';
 
 const PostLink = (props) => {
 
   return (
-    <div className="post-link">
       <tr key={props.title}>
-        <td className='ups'>
+        <td class="upvotes">
+          <img alt={"upvote"} src={updoot} id='upvote-img'/>
+          </td>
+        <td class="upvotes">
           <p>{props.ups}</p>
         </td>
-        <td className='link'>
+        <td>
           <tr>
             <td>
               <Link to={`/post?redditUrl='${props.redditUrl}'`}>{props.title}</Link>
@@ -21,7 +24,6 @@ const PostLink = (props) => {
           </tr>
         </td>
       </tr>
-    </div>
   );
 }
 
