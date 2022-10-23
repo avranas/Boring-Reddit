@@ -1,4 +1,4 @@
-
+/*Header */
 header {
   align-items: center;
   display: flex;
@@ -30,7 +30,7 @@ header {
   right: 1rem;
   top: 3.5rem;
   padding: 1rem;
-  height: 12rem;
+  height: 16rem;
   width: 9rem;
   line-height: 2.5rem;
   text-align: center;
@@ -49,13 +49,50 @@ header {
   }
 }
 
-#logo img {
-  width: 16rem;
+#logo {
+  width: 18rem;
+  height: 4rem;
+  background-image: url('./images/logo.png');
+  background-size: cover; 
 }
 
 #search-logo-wrap {
   display: flex;
   align-items: center;
+}
+
+/*Tablet Header*/
+@media only screen and (max-width: 895px){
+  .search {
+    font-size: 1rem;
+    line-height: 1.25rem;
+    padding-left: 1rem;
+  }
+
+  #logo {
+    width: 10rem;
+    height: 2.25rem;
+  }
+
+  #options-button{
+    margin: 0.75rem;
+  }
+}
+
+/*Phone Header*/
+@media only screen and (max-width: 600px){
+
+  #logo {
+    width: 3rem;
+    height: 3rem;
+    background-image: url('./images/smolLogo.png');
+  }
+
+  #options-button{
+    margin: 0.75rem;
+  }
+
+
 }
 
 td {
@@ -100,13 +137,8 @@ footer p {
   top: 3rem;
 }
 
-.back-button-containter {
-  display: flex;
-}
-
-.back-button-containter button{
-  justify-content: center;
-
+.post-head{
+display: flex;
 }
 
 .back-button {
@@ -114,13 +146,13 @@ footer p {
   background-size: 5rem, 5rem;
   width: 5rem;
   height: 5rem;
-  transition-duration: 0.05s;
+  transition-duration: 0.2s;
   filter: brightness(1.2);
   border: none;
   position: relative;
   top: 0.1rem;
   left: 0.7rem;
-
+  margin-right: 1.5rem;
 }
 
 .back-button:hover {
@@ -135,7 +167,8 @@ footer p {
   padding-bottom: 1rem;
 }
 
-.post-author {
+.author {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: 0.75rem;
 }
 
@@ -143,24 +176,6 @@ footer p {
   position: relative;
   left: 2.25rem;
   bottom: 0.25rem;
-}
-
-.parent {
-  background-color: hsla(200, 100%, 20%);
-  height: 400px;
-  width: 400px;
-}
-
-.child {
-  background-color: red;
-  height: 50%;
-  width: 50%;
-  transition: 1s;
-}
-
-.parent:focus .child {
-  background-color: green;
-  transform: translateY(100%);
 }
 
 #load img{
@@ -177,4 +192,17 @@ footer p {
   to {
     transform: rotate(360deg);
   }
+}
+
+#home-header {
+  margin: 1rem;
+}
+
+.nsfw{
+  color: red;
+  text-align: center;
+  width: 4rem;
+  border-color: red;
+  border-style: solid;
+  border-radius: 0.25rem;
 }

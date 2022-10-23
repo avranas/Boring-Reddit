@@ -51,6 +51,8 @@ const Post = ({redditUrl}) => {
       case 'Link':
         newElement = <p><a href={currentPost.link}>Click here</a></p>
         break;
+      default:
+        break;
     }
     postBody.push(newElement);
     if (options.commentsOn) {
@@ -58,15 +60,16 @@ const Post = ({redditUrl}) => {
     }
   }
 
-
   return (
     <div className="container">
-        <div class="row">
-          <div class="back-button-containter col-1">
+        <div class="post-head">
+          <div>
             <button onClick={handleBackButtonClick} className='back-button text-center'></button>
           </div>
-          <div class="col">
-            <span class="post-author align-bottom">u/{currentPost.author}</span>
+          <div>
+            {
+              currentPost.author && <p class="author align-bottom">u/{currentPost.author}</p>
+            }
             <h2 id="post-spacing">{currentPost.title}</h2>
           </div>
       </div>

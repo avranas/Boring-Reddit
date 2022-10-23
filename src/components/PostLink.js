@@ -14,12 +14,15 @@ const PostLink = (props) => {
         <td>
           <tr>
             <td>
+              {
+                props.nsfw && <p class="nsfw">NSFW</p>
+              }
               <Link to={`/post?redditUrl='${props.redditUrl}'`}>{props.title}</Link>
             </td>
           </tr>
           <tr>
             <td>
-              <p>u/{props.author}</p>
+              <p className="author">u/{props.author}</p>
             </td>
           </tr>
         </td>
