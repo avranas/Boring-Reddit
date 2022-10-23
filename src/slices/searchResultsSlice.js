@@ -19,7 +19,8 @@ export const getSearchResults = createAsyncThunk(
           title: postData.title,
           redditUrl: redditUrl,
           author: postData.author,
-          ups: postData.ups
+          ups: postData.ups,
+          nsfw: postData.over_18//Is this correct?
         }
         newPostList.push(newPost);
       }

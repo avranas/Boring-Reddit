@@ -17,6 +17,25 @@ const PostList = ({searchParams}) => {
     dispatch(getSearchResults(searchParams));
   }, [dispatch, searchParams]);
 
+  let body = searchResults.posts.map( i => {
+    return(
+      <PostLink 
+        title={i.title}
+        redditUrl={i.redditUrl}
+        link={i.link}
+        postType={i.postType}
+        author={i.author}
+        ups={i.ups}
+        nsfw={i.nsfw}
+      />
+    );
+  }).slice(0, options.threadLimit);
+  if (options.hideNSFW) {
+    body = body.filter(i => {
+      return i.props.nsfw === false
+    });
+  }
+
   return (
     <div id="post-list" className="container">
       { searchResults.isLoading && <LoadIcon/> }
@@ -24,20 +43,7 @@ const PostList = ({searchParams}) => {
       { !searchResults.hasError && !searchResults.isLoading && <h2>Welcome to r/{searchResults.subRedditName}</h2> }
       <table className='table table-striped'>
         <tbody>
-          {
-          searchResults.posts.map( i => {
-            return(
-              <PostLink 
-                title={i.title}
-                redditUrl={i.redditUrl}
-                link={i.link}
-                postType={i.postType}
-                author={i.author}
-                ups={i.ups}
-              />
-            );
-          }).slice(0, options.threadLimit)
-        }
+          {body}
         </tbody>
       </table>
     </div>

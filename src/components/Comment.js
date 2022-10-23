@@ -17,13 +17,13 @@ const Comment = (props) => {
       </td>
       <td>
         <tr>
-          <td className="author">
+          <td>
             {parse(bodyAsHtml)}
           </td>
         </tr>
         <tr>
           <td id="comment-body">
-            <p>u/{props.author}</p>
+            <p className="author">u/{props.author}</p>
           </td>
         </tr>
       </td>

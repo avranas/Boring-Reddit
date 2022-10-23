@@ -1,12 +1,14 @@
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
-import { getInitialThreadLimit, getInitialCommentsOn } from '../slices/optionsSlice';
+import { getInitialThreadLimit, getInitialCommentsOn, getInitialHideNsfw } from '../slices/optionsSlice';
 
 const OptionsMenu = (props) => {
   
   const [ open, setOpen ] = useState(false);
   const [ threadLimit, setThreadLimit ] = useState(getInitialThreadLimit());
   const [ commentsOn, setCommentsOn ] = useState(getInitialCommentsOn());
+  const [ hideNSFW, setHideNSFW ] = useState(getInitialHideNsfw());
+
   const dispatch = useDispatch();
   const maxThreads = 25;
 
@@ -22,6 +24,12 @@ const OptionsMenu = (props) => {
     const commentsOn = e.target.checked
     setCommentsOn(commentsOn);
     dispatch({ type: 'options/setCommentsOn', payload: { commentsOn }});
+  }
+
+  const handleChangeNSFW = (e) => {
+    const hideNSFW = e.target.checked
+    setHideNSFW(hideNSFW);
+    dispatch({ type: 'options/setHideNSFW', payload: { hideNSFW }});
   }
 
   const handleChangeThreadLimit = (e) => {
@@ -53,11 +61,6 @@ const OptionsMenu = (props) => {
     return () => document.removeEventListener("click", handleClick);
   }, [open]);
 
-  //TODO NEXT: 
-    //Understand the above code better
-    //Learn about react-transition-group
-    //Make the dropdown menu transition work
-
   return (
     <div id="options">
       <button id="options-button" data-dropdown-button>
@@ -77,7 +80,7 @@ const OptionsMenu = (props) => {
               onChange={handleChangeThreadLimit}
             />
           </div>
-            <label class="form-check-label" for="flexSwitchCheckDefault">Comments On</label>
+          <label class="form-check-label" for="flexSwitchCheckDefault">Comments On</label>
           <div class="form-check form-switch">
             <input 
               class="form-check-input"
@@ -87,6 +90,18 @@ const OptionsMenu = (props) => {
               id="comments-on"
               checked={commentsOn}
               onChange={handleChangeComments}
+            />
+          </div>
+          <label class="form-check-label" for="flexSwitchCheckDefault">Hide NSFW</label>
+          <div class="form-check form-switch">
+            <input 
+              class="form-check-input"
+              type="checkbox"
+              role="switch"
+              name="hide-nsfw"
+              id="hide-nsfw"
+              checked={hideNSFW}
+              onChange={handleChangeNSFW}
             />
           </div>
         </div>
