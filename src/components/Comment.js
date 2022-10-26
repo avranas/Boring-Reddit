@@ -8,24 +8,28 @@ const Comment = (props) => {
   const bodyAsHtml = md.render(props.body);
   
   return (
-    <tr>
-      <td class="upvotes">
+    <tr data-testid={`comment-${props.id}`}>
+      <td className="upvotes">
         <img alt="upvote" src={updoot}/>
       </td>
-      <td class="upvotes">
+      <td className="upvotes">
         <p>{props.ups}</p>
       </td>
       <td>
-        <tr>
-          <td>
-            {parse(bodyAsHtml)}
-          </td>
-        </tr>
-        <tr>
-          <td id="comment-body">
-            <p className="author">u/{props.author}</p>
-          </td>
-        </tr>
+        <table>
+          <tbody>
+            <tr>
+              <td>
+                {parse(bodyAsHtml)}
+              </td>
+            </tr>
+            <tr>
+              <td id="comment-body">
+                <p className="author">u/{props.author}</p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </td>
     </tr>
   );

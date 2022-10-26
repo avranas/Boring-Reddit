@@ -4,29 +4,33 @@ import updoot from '../images/updoot.png';
 const PostLink = (props) => {
 
   return (
-      <tr key={props.title}>
-        <td class="upvotes">
-          <img alt={"upvote"} src={updoot} id='upvote-img'/>
-          </td>
-        <td class="upvotes">
-          <p>{props.ups}</p>
+    <tr data-testid={`post-link-${props.id}`}>
+      <td className="upvotes">
+        <img alt={"upvote"} src={updoot} id='upvote-img'/>
         </td>
-        <td>
-          <tr>
-            <td>
+      <td className="upvotes">
+        <p>{props.ups}</p>
+      </td>
+      <td>
+        <table>
+          <tbody>
+            <tr>
+              <td>
               {
-                props.nsfw && <p class="nsfw">NSFW</p>
+                props.nsfw && <p className="nsfw">NSFW</p>
               }
-              <Link to={`/post?redditUrl='${props.redditUrl}'`}>{props.title}</Link>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <p className="author">u/{props.author}</p>
-            </td>
-          </tr>
-        </td>
-      </tr>
+                <Link to={`/post?redditUrl='${props.redditUrl}'`}>{props.title}</Link>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p className="author">u/{props.author}</p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </td>
+    </tr>
   );
 }
 

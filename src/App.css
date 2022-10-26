@@ -138,14 +138,23 @@ footer p {
 }
 
 .post-head{
-display: flex;
+  display: flex;
+}
+
+#external-link {
+  margin-left: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+#button-holder {
+  display: flex;
 }
 
 .back-button {
   background-image: url('./images/back.png');
-  background-size: 5rem, 5rem;
-  width: 5rem;
-  height: 5rem;
+  background-size: 4rem, 4rem;
+  width: 4rem;
+  height: 4rem;
   transition-duration: 0.2s;
   filter: brightness(1.2);
   border: none;
@@ -153,6 +162,7 @@ display: flex;
   top: 0.1rem;
   left: 0.7rem;
   margin-right: 1.5rem;
+  align-self: center;
 }
 
 .back-button:hover {
@@ -205,4 +215,9 @@ display: flex;
   border-color: red;
   border-style: solid;
   border-radius: 0.25rem;
+}
+
+#welcome {
+  margin-top: 1rem;
+  margin-bottom: 2rem;
 }

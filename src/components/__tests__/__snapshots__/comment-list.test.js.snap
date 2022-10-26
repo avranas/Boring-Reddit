@@ -1,0 +1,155 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CommentList matches snapshot 1`] = `
+<div
+  data-testid="comment-list"
+>
+  <h3>
+    Comments
+  </h3>
+  <table
+    className="table table-striped"
+  >
+    <tbody>
+      <tr
+        data-testid="comment-0"
+      >
+        <td
+          className="upvotes"
+        >
+          <img
+            alt="upvote"
+            src="updoot.png"
+          />
+        </td>
+        <td
+          className="upvotes"
+        >
+          <p>
+            9001
+          </p>
+        </td>
+        <td>
+          <table>
+            <tbody>
+              <tr>
+                <td>
+                  <p>
+                    Fake!
+                  </p>
+                  
+
+                </td>
+              </tr>
+              <tr>
+                <td
+                  id="comment-body"
+                >
+                  <p
+                    className="author"
+                  >
+                    u/
+                    stretcc
+                  </p>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </td>
+      </tr>
+      <tr
+        data-testid="comment-1"
+      >
+        <td
+          className="upvotes"
+        >
+          <img
+            alt="upvote"
+            src="updoot.png"
+          />
+        </td>
+        <td
+          className="upvotes"
+        >
+          <p>
+            1337
+          </p>
+        </td>
+        <td>
+          <table>
+            <tbody>
+              <tr>
+                <td>
+                  <p>
+                    Cool story, bro
+                  </p>
+                  
+
+                </td>
+              </tr>
+              <tr>
+                <td
+                  id="comment-body"
+                >
+                  <p
+                    className="author"
+                  >
+                    u/
+                    stretcc
+                  </p>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </td>
+      </tr>
+      <tr
+        data-testid="comment-2"
+      >
+        <td
+          className="upvotes"
+        >
+          <img
+            alt="upvote"
+            src="updoot.png"
+          />
+        </td>
+        <td
+          className="upvotes"
+        >
+          <p>
+            -2
+          </p>
+        </td>
+        <td>
+          <table>
+            <tbody>
+              <tr>
+                <td>
+                  <p>
+                    u mad?
+                  </p>
+                  
+
+                </td>
+              </tr>
+              <tr>
+                <td
+                  id="comment-body"
+                >
+                  <p
+                    className="author"
+                  >
+                    u/
+                    mean_troll42
+                  </p>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;

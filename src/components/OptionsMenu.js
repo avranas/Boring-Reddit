@@ -62,7 +62,7 @@ const OptionsMenu = (props) => {
   }, [open]);
 
   return (
-    <div id="options">
+    <div id="options" data-testid="options-menu">
       <button id="options-button" data-dropdown-button>
         Options
       </button>
@@ -80,10 +80,10 @@ const OptionsMenu = (props) => {
               onChange={handleChangeThreadLimit}
             />
           </div>
-          <label class="form-check-label" for="flexSwitchCheckDefault">Comments On</label>
-          <div class="form-check form-switch">
+          <label className="form-check-label" htmlFor="flexSwitchCheckDefault">Comments On</label>
+          <div className="form-check form-switch">
             <input 
-              class="form-check-input"
+              className="form-check-input"
               type="checkbox"
               role="switch"
               name="comments-on"
@@ -92,10 +92,10 @@ const OptionsMenu = (props) => {
               onChange={handleChangeComments}
             />
           </div>
-          <label class="form-check-label" for="flexSwitchCheckDefault">Hide NSFW</label>
-          <div class="form-check form-switch">
+          <label className="form-check-label" htmlFor="flexSwitchCheckDefault">Hide NSFW</label>
+          <div className="form-check form-switch">
             <input 
-              class="form-check-input"
+              className="form-check-input"
               type="checkbox"
               role="switch"
               name="hide-nsfw"
