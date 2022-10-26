@@ -1,6 +1,5 @@
 import './App.css';
 import SearchBar from './components/SearchBar';
-import Logo from './components/Logo';
 import OptionsMenu from './components/OptionsMenu';
 import PostList from './components/PostList';
 import Post from './components/Post';
@@ -16,7 +15,7 @@ function App() {
       <header>
         <div id="search-logo-wrap">
           <Link to="/">
-            <Logo />
+            <div id="logo"/>
           </Link>
           <SearchBar />
         </div>

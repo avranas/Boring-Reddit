@@ -26,22 +26,21 @@ const Post = ({redditUrl}) => {
   }, [dispatch, redditUrl]);
 
   const handleBackButtonClick = () => {
-    //dispatch({type: 'searchResults/clearResults', payload: {}});
     dispatch({type: 'currentPost/clearPage', payload: {}});
     navigate(-1);
   }
 
   let postBody = [];
   if (currentPost.isLoading) {
-    postBody.push(<LoadIcon/>);
+    postBody.push(<LoadIcon  key={'load'} />);
   } else if (currentPost.hasError) {
-    postBody.push(<h3>An error occured while loading the post :(</h3>);
+    postBody.push(<h3 key={'error'} >An error occured while loading the post :(</h3>);
   } else {
     let newElement = null;
     switch (currentPost.postType) {
       case 'Image':
         newElement =
-          <a href={currentPost.link}>
+          <a href={currentPost.link} key={'content'} >
             <img src={currentPost.link} alt="post" className="post-image" />
           </a>
         break;
@@ -49,31 +48,31 @@ const Post = ({redditUrl}) => {
         parse(bodyAsHtml);
         break;
       case 'Link':
-        newElement = <p><a href={currentPost.link}>Click here</a></p>
+        newElement = <p key={'content'} id="external-link"><a href={currentPost.link}>External Link</a></p>
         break;
       default:
         break;
     }
     postBody.push(newElement);
     if (options.commentsOn) {
-      postBody.push(<CommentList comments={currentPost.comments}/>);
+      postBody.push(<CommentList key={'comments'} comments={currentPost.comments}/>);
     }
   }
 
   return (
-    <div className="container">
-        <div class="post-head">
-          <div>
-            <button onClick={handleBackButtonClick} className='back-button text-center'></button>
-          </div>
-          <div>
-            {
-              currentPost.author && <p class="author align-bottom">u/{currentPost.author}</p>
-            }
-            <h2 id="post-spacing">{currentPost.title}</h2>
-          </div>
+    <div className="container" data-testid="post">
+      <div className="post-head">
+        <div id="button-holder">
+          <button onClick={handleBackButtonClick} className='back-button'></button>
+        </div>
+        <div>
+          {
+            currentPost.author && <p className="author align-bottom">u/{currentPost.author}</p>
+          }
+          <h2 id="post-spacing">{currentPost.title}</h2>
+        </div>
       </div>
-      {postBody}
+      {postBody }
     </div>
   );
 }

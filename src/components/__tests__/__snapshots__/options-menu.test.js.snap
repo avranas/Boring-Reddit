@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`OptionsMenu matches snapshot 1`] = `
+<div
+  data-testid="options-menu"
+  id="options"
+>
+  <button
+    data-dropdown-button={true}
+    id="options-button"
+  >
+    Options
+  </button>
+</div>
+`;

@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PostList matches snapshot 1`] = `
+<div
+  className="container"
+  data-testid="post-list"
+  id="post-list"
+>
+  <div
+    id="load"
+  >
+    <img
+      alt="logo"
+      src="load.png"
+    />
+  </div>
+  <table
+    className="table table-striped"
+  >
+    <tbody />
+  </table>
+</div>
+`;

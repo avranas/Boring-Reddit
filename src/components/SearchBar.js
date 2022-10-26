@@ -19,16 +19,35 @@ const SearchBar = (props) => {
       //Clear everything first.
       dispatch({type: 'searchResults/clearResults', payload: {}});
       dispatch({type: 'currentPost/clearPage', payload: {}});
+      console.log('navigating!')
       navigate(`/search-results?search=${searchBarText}`);
       setSearchBarText('');
     }
   }
+  const handleKeyPress = (e) => {
+    if (e.key === 'Enter') {
+      handleSubmit();
+    }
+  }
 
   return (
-    <div className="search">
+    <div className="search" data-testid="searchbar">
       <label htmlFor="search">Search r/</label>
-      <input type="search" id="search" name="search" value={searchBarText} onChange={handleChange}></input>
-      <button onClick={handleSubmit}>Search</button>
+      <input
+        type="search"
+        id="search"
+        name="search"
+        value={searchBarText} 
+        onChange={handleChange}
+        onKeyUp={handleKeyPress}
+      >
+      </input>
+      <button 
+        data-testid="searchbar-button"
+        onClick={handleSubmit}
+      >
+        Search
+      </button>
     </div>
   );
 }

@@ -17,9 +17,11 @@ const PostList = ({searchParams}) => {
     dispatch(getSearchResults(searchParams));
   }, [dispatch, searchParams]);
 
-  let body = searchResults.posts.map( i => {
+  let body = searchResults.posts.map((i, key) => {
     return(
-      <PostLink 
+      <PostLink
+        id={key}
+        key={key}
         title={i.title}
         redditUrl={i.redditUrl}
         link={i.link}
@@ -37,10 +39,10 @@ const PostList = ({searchParams}) => {
   }
 
   return (
-    <div id="post-list" className="container">
+    <div id="post-list" className="container" data-testid="post-list">
       { searchResults.isLoading && <LoadIcon/> }
       { searchResults.hasError && <h2>Subreddit not found :( Try a different search term!</h2> }
-      { !searchResults.hasError && !searchResults.isLoading && <h2>Welcome to r/{searchResults.subRedditName}</h2> }
+      { !searchResults.hasError && !searchResults.isLoading && <h2 data-testid="welcome-header" id="welcome">Welcome to r/{searchResults.subRedditName}</h2> }
       <table className='table table-striped'>
         <tbody>
           {body}

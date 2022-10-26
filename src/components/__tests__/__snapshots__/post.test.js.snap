@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Post matches snapshot 1`] = `
+<div
+  className="container"
+  data-testid="post"
+>
+  <div
+    className="post-head"
+  >
+    <div
+      id="button-holder"
+    >
+      <button
+        className="back-button"
+        onClick={[Function]}
+      />
+    </div>
+    <div>
+      <h2
+        id="post-spacing"
+      />
+    </div>
+  </div>
+  <div
+    id="load"
+  >
+    <img
+      alt="logo"
+      src="load.png"
+    />
+  </div>
+</div>
+`;
