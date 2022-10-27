@@ -11,8 +11,7 @@ header {
   padding-left: 2rem;
 }
 
-
-.options-button button{
+.options-button button {
   margin: 1rem;
   height: 3rem;
   width: 4rem;
@@ -21,7 +20,7 @@ header {
 .options-menu {
   position: absolute;
   color: white;
-  background-color:darkslateblue;
+  background-color: darkslateblue;
   right: 1rem;
   padding: 1rem;
   height: 12rem;
@@ -33,7 +32,6 @@ header {
   height: 2rem;
   width: 4rem;
 }
-
 
 .logo img {
   width: 16rem;
@@ -53,7 +51,7 @@ header {
 }
 
 .back-button {
-  background-image: url('./images/back.png');
+  background-image: url("./images/back.png");
   border-radius: 0.5rem;
   background-size: 50px 25px;
   width: 50px;
@@ -98,7 +96,7 @@ header {
   max-width: 50rem;
 }
 
-.post-link { 
+.post-link {
   display: flex;
   align-items: center;
 }
