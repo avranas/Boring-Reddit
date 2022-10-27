@@ -1,13 +1,12 @@
-import Comment from './Comment';
+import Comment from "./Comment";
 
-const CommentList = ({comments}) => {
-
+const CommentList = ({ comments }) => {
   return (
-    <div data-testid='comment-list'>
+    <div data-testid="comment-list">
       <h3>Comments</h3>
-      <table className='table table-striped'>
-        <tbody>{
-          comments.map((i, key) => {
+      <table className="table table-striped">
+        <tbody>
+          {comments.map((i, key) => {
             return (
               <Comment
                 id={key}
@@ -17,12 +16,11 @@ const CommentList = ({comments}) => {
                 author={i.author}
               />
             );
-          })
-        }
+          })}
         </tbody>
       </table>
     </div>
   );
-}
+};
 
 export default CommentList;

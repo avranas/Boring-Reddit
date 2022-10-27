@@ -1,4 +1,4 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice } from "@reduxjs/toolkit";
 
 export const getInitialThreadLimit = () => {
   //When .getItem() can't find what it's looking for, it returns "undefined" as a
@@ -8,7 +8,7 @@ export const getInitialThreadLimit = () => {
     threadLimit = 10;
   }
   return threadLimit;
-}
+};
 
 export const getInitialCommentsOn = () => {
   let commentsOn = localStorage.getItem("commentsOn");
@@ -16,7 +16,7 @@ export const getInitialCommentsOn = () => {
     commentsOn = "true";
   }
   return commentsOn === "true";
-}
+};
 
 export const getInitialHideNsfw = () => {
   let hideNSFW = localStorage.getItem("hideNSFW");
@@ -24,16 +24,16 @@ export const getInitialHideNsfw = () => {
     hideNSFW = "true";
   }
   return hideNSFW === "true";
-}
+};
 
 const optionsSlice = createSlice({
-  name: 'options',
+  name: "options",
   initialState: {
     options: {
       threadLimit: getInitialThreadLimit(),
       commentsOn: getInitialCommentsOn(),
-      hideNSFW: getInitialHideNsfw()
-    }
+      hideNSFW: getInitialHideNsfw(),
+    },
   },
   reducers: {
     setThreadLimit(state, action) {
@@ -50,10 +50,11 @@ const optionsSlice = createSlice({
       const newHideNSFW = action.payload.hideNSFW;
       localStorage.setItem("hideNSFW", newHideNSFW);
       state.options.hideNSFW = newHideNSFW;
-    }
-  }
+    },
+  },
 });
 
-export const selectOptions = state => state.options.options;
-export const { setThreadLimit, setCommentsOn, setHideNSFW } = optionsSlice.actions;
+export const selectOptions = (state) => state.options.options;
+export const { setThreadLimit, setCommentsOn, setHideNSFW } =
+  optionsSlice.actions;
 export default optionsSlice.reducer;

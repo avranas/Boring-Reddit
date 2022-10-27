@@ -1,16 +1,15 @@
-import updoot from '../images/updoot.png';
-const parse = require('html-react-parser');
-const MarkdownIt = require('markdown-it');
+import updoot from "../images/updoot.png";
+const parse = require("html-react-parser");
+const MarkdownIt = require("markdown-it");
 
 const Comment = (props) => {
-
   const md = new MarkdownIt();
   const bodyAsHtml = md.render(props.body);
-  
+
   return (
     <tr data-testid={`comment-${props.id}`}>
       <td className="upvotes">
-        <img alt="upvote" src={updoot}/>
+        <img alt="upvote" src={updoot} />
       </td>
       <td className="upvotes">
         <p>{props.ups}</p>
@@ -19,9 +18,7 @@ const Comment = (props) => {
         <table>
           <tbody>
             <tr>
-              <td>
-                {parse(bodyAsHtml)}
-              </td>
+              <td>{parse(bodyAsHtml)}</td>
             </tr>
             <tr>
               <td id="comment-body">
@@ -33,6 +30,6 @@ const Comment = (props) => {
       </td>
     </tr>
   );
-}
+};
 
 export default Comment;
