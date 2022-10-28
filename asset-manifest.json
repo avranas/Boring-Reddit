@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/Boring-Reddit/static/css/main.8c29d7f2.css",
+    "main.js": "/Boring-Reddit/static/js/main.21d6f0ae.js",
+    "static/js/787.0622d18e.chunk.js": "/Boring-Reddit/static/js/787.0622d18e.chunk.js",
+    "static/media/logo.png": "/Boring-Reddit/static/media/logo.c828eb61eac10ef919ed.png",
+    "static/media/smolLogo.png": "/Boring-Reddit/static/media/smolLogo.847836f029616351dea0.png",
+    "index.html": "/Boring-Reddit/index.html",
+    "main.8c29d7f2.css.map": "/Boring-Reddit/static/css/main.8c29d7f2.css.map",
+    "main.21d6f0ae.js.map": "/Boring-Reddit/static/js/main.21d6f0ae.js.map",
+    "787.0622d18e.chunk.js.map": "/Boring-Reddit/static/js/787.0622d18e.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.8c29d7f2.css",
+    "static/js/main.21d6f0ae.js"
+  ]
+}
