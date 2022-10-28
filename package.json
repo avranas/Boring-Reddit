@@ -27,8 +27,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test --coverage",
     "eject": "react-scripts eject",
-    "predeploy" : "npm run build",
-    "deploy" : "gh-pages -d build"
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -50,6 +50,7 @@
   },
   "devDependencies": {
     "@testing-library/react": "^13.4.0",
+    "gh-pages": "^4.0.0",
     "prettier": "2.7.1",
     "react-test-renderer": "^18.2.0"
   }
