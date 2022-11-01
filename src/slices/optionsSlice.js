@@ -7,7 +7,7 @@ export const getInitialThreadLimit = () => {
   if (threadLimit === "undefined") {
     threadLimit = "10";
   }
-  return threadLimit;
+  return threadLimit;//TODO: Fix this problem with localStorage
 };
 
 export const getInitialCommentsOn = () => {
