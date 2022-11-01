@@ -5,7 +5,7 @@ export const getInitialThreadLimit = () => {
   //STRING for some reason.
   let threadLimit = localStorage.getItem("threadLimit");
   if (threadLimit === null) {
-    threadLimit = "10";
+    threadLimit = 10;
   }
   return threadLimit;
 };

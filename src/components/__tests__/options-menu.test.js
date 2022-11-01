@@ -38,22 +38,24 @@ test("OptionsMenu matches open snapshot", () => {
 
 test("User clicks on the options menu, then changes thread count and clicks both switches", async () => {
   const beforeOptions = store.getState().options.options;
-  const testInput = "22";
+  const testInput = "22"
   render(optionsMenu);
   const optionsMenuButton = screen.getByTestId("options-menu-button");
   userEvent.click(optionsMenuButton);
   const threadLimitInput = screen.getByTestId("thread-limit-input");
-  userEvent.type(threadLimitInput, testInput);
+  userEvent.type(threadLimitInput, `{backspace}{backspace}${testInput}`);
   const commentSwitch = screen.getByTestId("comment-switch");
   userEvent.click(commentSwitch);
   const nsfwSwitch = screen.getByTestId("nsfw-switch");
   userEvent.click(nsfwSwitch);
   const afterOptions = store.getState().options.options;
-  expect(beforeOptions.threadLimit).toBe(null);
+  console.log(beforeOptions)
+  console.log(afterOptions)
+  expect(beforeOptions.threadLimit).toBe(10);
   expect(afterOptions.threadLimit).toBe(Number(testInput));
-  expect(beforeOptions.hideNSFW).toBe(false);
-  expect(afterOptions.hideNSFW).toBe(true);
-  expect(beforeOptions.commentsOn).toBe(false);
-  expect(afterOptions.commentsOn).toBe(true);
+  expect(beforeOptions.hideNSFW).toBe(true);
+  expect(afterOptions.hideNSFW).toBe(false);
+  expect(beforeOptions.commentsOn).toBe(true);
+  expect(afterOptions.commentsOn).toBe(false);
   expect(optionsMenu);
 });
