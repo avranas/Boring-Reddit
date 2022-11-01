@@ -4,15 +4,17 @@ export const getInitialThreadLimit = () => {
   //When .getItem() can't find what it's looking for, it returns "undefined" as a
   //STRING for some reason.
   let threadLimit = localStorage.getItem("threadLimit");
-  if (threadLimit === "undefined") {
+  console.log(threadLimit)
+  if (threadLimit === null) {
+    console.log('no thread limit')
     threadLimit = "10";
   }
-  return threadLimit;//TODO: Fix this problem with localStorage
+  return threadLimit;
 };
 
 export const getInitialCommentsOn = () => {
   let commentsOn = localStorage.getItem("commentsOn");
-  if (commentsOn === "undefined") {
+  if (commentsOn === null) {
     commentsOn = "true";
   }
   return commentsOn === "true";
@@ -20,7 +22,7 @@ export const getInitialCommentsOn = () => {
 
 export const getInitialHideNsfw = () => {
   let hideNSFW = localStorage.getItem("hideNSFW");
-  if (hideNSFW === "undefined") {
+  if (hideNSFW === null) {
     hideNSFW = "true";
   }
   return hideNSFW === "true";
