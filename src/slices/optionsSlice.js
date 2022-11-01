@@ -4,9 +4,7 @@ export const getInitialThreadLimit = () => {
   //When .getItem() can't find what it's looking for, it returns "undefined" as a
   //STRING for some reason.
   let threadLimit = localStorage.getItem("threadLimit");
-  console.log(threadLimit)
   if (threadLimit === null) {
-    console.log('no thread limit')
     threadLimit = "10";
   }
   return threadLimit;

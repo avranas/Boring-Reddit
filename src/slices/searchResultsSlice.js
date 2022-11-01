@@ -67,8 +67,6 @@ const searchResultsSlice = createSlice({
     [getSearchResults.rejected]: (state, action) => {
       state.searchResults.isLoading = false;
       state.searchResults.hasError = true;
-      console.log(state);
-      console.log(action);
     },
   },
 });
