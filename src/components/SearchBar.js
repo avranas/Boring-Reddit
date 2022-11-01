@@ -18,7 +18,7 @@ const SearchBar = (props) => {
       //Clear everything first.
       dispatch({ type: "searchResults/clearResults", payload: {} });
       dispatch({ type: "currentPost/clearPage", payload: {} });
-      navigate(`/search-results?search=${searchBarText}`);
+      navigate(`/search-results?search=${searchBarText.toLowerCase()}`);
       setSearchBarText("");
     }
   };
