@@ -4,7 +4,7 @@ import { createAsyncThunk } from "@reduxjs/toolkit";
 export const loadPage = createAsyncThunk(
   "currentPost/loadPage",
   async (redditUrl) => {
-    const newUrl = `http://www.reddit.com${redditUrl}.json`;
+    const newUrl = `https://www.reddit.com${redditUrl}.json`;
     const response = await fetch(newUrl);
     console.log(response.status);
     if (response.status === 200) {
