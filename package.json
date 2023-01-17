@@ -2,7 +2,7 @@
   "name": "boring-reddit",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://avranas.github.io/Boring-Reddit/",
+  "homepage": "https://boring-reddit.herokuapp.com/",
   "dependencies": {
     "@reduxjs/toolkit": "^1.8.6",
     "@testing-library/jest-dom": "^5.16.5",
