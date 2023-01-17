@@ -5,17 +5,13 @@ import { selectCurrentPost, loadPage } from "../slices/currentPostSlice";
 import { selectOptions } from "../slices/optionsSlice";
 import { useNavigate } from "react-router-dom";
 import LoadIcon from "../components/LoadIcon";
-
-const parse = require("html-react-parser");
-const MarkdownIt = require("markdown-it");
+import ReactMarkdown from "react-markdown";
 
 const Post = ({ redditUrl }) => {
   const currentPost = useSelector(selectCurrentPost);
   const options = useSelector(selectOptions);
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const md = new MarkdownIt();
-  const bodyAsHtml = md.render(currentPost.body);
 
   useEffect(() => {
     //Take redditUrl, remove the quotes, then loadPage will add
@@ -42,12 +38,12 @@ const Post = ({ redditUrl }) => {
       case "Image":
         newElement = (
           <a href={currentPost.link} key={"content"}>
-            <img src={currentPost.link} alt="post" className="post-image" />
+            <img src={currentPost.link} alt="post" id="post-image" />
           </a>
         );
         break;
       case "Text":
-        parse(bodyAsHtml);
+        newElement = <ReactMarkdown>{currentPost.body}</ReactMarkdown>;
         break;
       case "Link":
         newElement = (

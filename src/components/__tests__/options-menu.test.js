@@ -38,7 +38,7 @@ test("OptionsMenu matches open snapshot", () => {
 
 test("User clicks on the options menu, then changes thread count and clicks both switches", async () => {
   const beforeOptions = store.getState().options.options;
-  const testInput = "22"
+  const testInput = "22";
   render(optionsMenu);
   const optionsMenuButton = screen.getByTestId("options-menu-button");
   userEvent.click(optionsMenuButton);
@@ -49,8 +49,8 @@ test("User clicks on the options menu, then changes thread count and clicks both
   const nsfwSwitch = screen.getByTestId("nsfw-switch");
   userEvent.click(nsfwSwitch);
   const afterOptions = store.getState().options.options;
-  console.log(beforeOptions)
-  console.log(afterOptions)
+  console.log(beforeOptions);
+  console.log(afterOptions);
   expect(beforeOptions.threadLimit).toBe(10);
   expect(afterOptions.threadLimit).toBe(Number(testInput));
   expect(beforeOptions.hideNSFW).toBe(true);

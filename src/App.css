@@ -1,3 +1,15 @@
+.App {
+  background: linear-gradient(
+    rgb(248, 250, 253) 0%,
+    rgba(248, 250, 253, 0) 413px
+  );
+  background-image: linear-gradient(
+    rgb(248, 250, 253) 0%,
+    rgba(248, 250, 253, 0) 413px
+  );
+  color: rgb(48, 53, 73);
+}
+
 /*Header */
 header {
   align-items: center;
@@ -126,9 +138,10 @@ footer p {
   padding-right: 1rem;
 }
 
-.post-image {
+#post-image {
   margin: 2rem;
   max-height: 40rem;
+  width: 100%;
 }
 
 .upvotes p {
