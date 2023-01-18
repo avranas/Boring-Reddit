@@ -1,4 +1,4 @@
-import CommentList from "./CommentList";
+import CommentList from "../components/CommentList";
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { selectCurrentPost, loadPage } from "../slices/currentPostSlice";

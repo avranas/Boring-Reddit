@@ -1,4 +1,4 @@
-import PostLink from "./PostLink";
+import PostLink from "../components/PostLink";
 import { useSelector } from "react-redux";
 import { selectSearchResults } from "../slices/searchResultsSlice";
 import { selectOptions } from "../slices/optionsSlice";
