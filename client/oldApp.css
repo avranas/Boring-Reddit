@@ -1,0 +1,110 @@
+header {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.search {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  padding-left: 2rem;
+}
+
+.options-button button {
+  margin: 1rem;
+  height: 3rem;
+  width: 4rem;
+}
+
+.options-menu {
+  position: absolute;
+  color: white;
+  background-color: darkslateblue;
+  right: 1rem;
+  padding: 1rem;
+  height: 12rem;
+  line-height: 2rem;
+  text-align: center;
+}
+
+#submit-options {
+  height: 2rem;
+  width: 4rem;
+}
+
+.logo img {
+  width: 16rem;
+}
+
+.search-logo-wrap {
+  display: flex;
+  align-items: center;
+}
+
+.post-list {
+  line-height: 1.5rem;
+  padding-left: 2rem;
+}
+.post-list li {
+  list-style: none;
+}
+
+.back-button {
+  background-image: url("./images/back.png");
+  border-radius: 0.5rem;
+  background-size: 50px 25px;
+  width: 50px;
+  height: 25px;
+  border: 2px solid;
+  color: black;
+  transition-duration: 0.05s;
+  filter: brightness(1.2);
+  margin-right: 1rem;
+}
+
+.back-button:hover {
+  filter: brightness(2);
+}
+
+.back-button:active {
+  filter: brightness(0.5);
+}
+
+.post-head {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+}
+
+.post {
+  margin: 1rem;
+}
+
+.comment {
+  display: flex;
+}
+.comment-list ul {
+  list-style: none;
+}
+
+.comment div {
+  padding-left: 2rem;
+}
+
+.comment-body {
+  max-width: 50rem;
+}
+
+.post-link {
+  display: flex;
+  align-items: center;
+}
+
+.post-link div {
+  padding-right: 2rem;
+}
+
+.post-link .link {
+  padding-right: 2rem;
+}

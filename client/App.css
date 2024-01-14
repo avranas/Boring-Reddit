@@ -1,0 +1,245 @@
+.App {
+  background: linear-gradient(
+    rgb(248, 250, 253) 0%,
+    rgba(248, 250, 253, 0) 413px
+  );
+  background-image: linear-gradient(
+    rgb(248, 250, 253) 0%,
+    rgba(248, 250, 253, 0) 413px
+  );
+  color: rgb(48, 53, 73);
+}
+
+/*Header */
+header {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.search {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  padding-left: 2rem;
+}
+
+.search input {
+  border-style: solid;
+  border-color: black;
+  border-radius: 4px;
+  margin-left: 0.2rem;
+  margin-right: 0.2rem;
+}
+
+.search button {
+  border-radius: 4px;
+}
+
+#options-button {
+  margin: 1rem;
+}
+
+#options-button:hover {
+  color: black;
+}
+
+#options {
+  position: relative;
+}
+
+#options-menu {
+  position: absolute;
+  background-color: rgb(255, 255, 255);
+  right: 1rem;
+  top: 3.5rem;
+  padding: 1rem;
+  height: 16rem;
+  width: 9rem;
+  line-height: 2.5rem;
+  text-align: center;
+  border-radius: 0.25rem;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.3);
+  opacity: 1;
+  animation: 150ms ease-out 0s 1 slideIn;
+}
+
+@keyframes slideIn {
+  0% {
+    transform: translateY(-0.5rem);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+#logo {
+  width: 18rem;
+  height: 4rem;
+  background-image: url("./images/logo.png");
+  background-size: cover;
+}
+
+#search-logo-wrap {
+  display: flex;
+  align-items: center;
+}
+
+/*Tablet Header*/
+@media only screen and (max-width: 895px) {
+  .search {
+    font-size: 1rem;
+    line-height: 1.25rem;
+    padding-left: 1rem;
+  }
+
+  #logo {
+    width: 10rem;
+    height: 2.25rem;
+  }
+
+  #options-button {
+    margin: 0.75rem;
+  }
+}
+
+/*Phone Header*/
+@media only screen and (max-width: 600px) {
+  #logo {
+    width: 3rem;
+    height: 3rem;
+    background-image: url("./images/smolLogo.png");
+  }
+
+  #options-button {
+    margin: 0.75rem;
+  }
+}
+
+td {
+  padding: 1rem;
+}
+
+.comment td {
+  padding: 0.5rem;
+}
+
+.post-link td {
+  padding: 0.5rem;
+}
+
+footer {
+  width: 100%;
+  text-align: right;
+}
+
+footer p {
+  justify-content: center;
+  padding-right: 1rem;
+}
+
+#post-image {
+  margin: 2rem;
+  max-height: 40rem;
+  width: 100%;
+}
+
+.upvotes p {
+  margin: 1rem;
+  position: relative;
+  top: 2.1rem;
+  left: 0rem;
+}
+
+.upvotes img {
+  max-width: 1.3rem;
+  max-height: 1.3rem;
+  position: relative;
+  left: 1rem;
+  top: 3rem;
+}
+
+.post-head {
+  display: flex;
+}
+
+#external-link {
+  margin-left: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+#button-holder {
+  display: flex;
+}
+
+.back-button {
+  background-image: url("./images/back.png");
+  background-size: 4rem, 4rem;
+  width: 4rem;
+  height: 4rem;
+  transition-duration: 0.2s;
+  filter: brightness(1.2);
+  border: none;
+  position: relative;
+  top: 0.1rem;
+  left: 0.7rem;
+  margin-right: 1.5rem;
+  align-self: center;
+}
+
+.back-button:hover {
+  filter: brightness(2);
+}
+
+.back-button:active {
+  filter: brightness(0.5);
+}
+
+#post-spacing {
+  padding-bottom: 1rem;
+}
+
+.author {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 0.75rem;
+}
+
+.form-check-input {
+  position: relative;
+  left: 2.25rem;
+  bottom: 0.25rem;
+}
+
+#load img {
+  margin: 2rem;
+  height: 4rem;
+  width: 4rem;
+  animation: rotation 2s infinite linear;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+#home-header {
+  margin: 1rem;
+}
+
+.nsfw {
+  color: red;
+  text-align: center;
+  width: 4rem;
+  border-color: red;
+  border-style: solid;
+  border-radius: 0.25rem;
+}
+
+#welcome {
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}
