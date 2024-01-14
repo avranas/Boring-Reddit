@@ -1,11 +1,12 @@
-import CommentList from "./CommentList";
-import React, { useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { selectCurrentPost, loadPage } from "../slices/currentPostSlice";
-import { selectOptions } from "../slices/optionsSlice";
-import { useNavigate } from "react-router-dom";
-import LoadIcon from "./LoadIcon";
-import ReactMarkdown from "react-markdown";
+import CommentList from './CommentList';
+import React, { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { selectCurrentPost, loadPage } from '../slices/currentPostSlice';
+import { selectOptions } from '../slices/optionsSlice';
+import { useNavigate } from 'react-router-dom';
+import LoadIcon from './LoadIcon';
+import ReactMarkdown from 'react-markdown';
+import back from '../images/back.png';
 
 const Post = ({ redditUrl }) => {
   const currentPost = useSelector(selectCurrentPost);
@@ -21,33 +22,33 @@ const Post = ({ redditUrl }) => {
   }, [dispatch, redditUrl]);
 
   const handleBackButtonClick = () => {
-    dispatch({ type: "currentPost/clearPage", payload: {} });
+    dispatch({ type: 'currentPost/clearPage', payload: {} });
     navigate(-1);
   };
 
   let postBody = [];
   if (currentPost.isLoading) {
-    postBody.push(<LoadIcon key={"load"} />);
+    postBody.push(<LoadIcon key={'load'} />);
   } else if (currentPost.hasError) {
     postBody.push(
-      <h3 key={"error"}>An error occured while loading the post :(</h3>
+      <h3 key={'error'}>An error occured while loading the post :(</h3>
     );
   } else {
     let newElement = null;
     switch (currentPost.postType) {
-      case "Image":
+      case 'Image':
         newElement = (
-          <a href={currentPost.link} key={"content"}>
+          <a href={currentPost.link} key={'content'}>
             <img src={currentPost.link} alt="post" id="post-image" />
           </a>
         );
         break;
-      case "Text":
+      case 'Text':
         newElement = <ReactMarkdown>{currentPost.body}</ReactMarkdown>;
         break;
-      case "Link":
+      case 'Link':
         newElement = (
-          <p key={"content"} id="external-link">
+          <p key={'content'} id="external-link">
             <a href={currentPost.link}>External Link</a>
           </p>
         );
@@ -58,7 +59,7 @@ const Post = ({ redditUrl }) => {
     postBody.push(newElement);
     if (options.commentsOn) {
       postBody.push(
-        <CommentList key={"comments"} comments={currentPost.comments} />
+        <CommentList key={'comments'} comments={currentPost.comments} />
       );
     }
   }
@@ -67,10 +68,12 @@ const Post = ({ redditUrl }) => {
     <div className="container" data-testid="post">
       <div className="post-head">
         <div id="button-holder">
-          <button
+          <img
             onClick={handleBackButtonClick}
             className="back-button"
-          ></button>
+            src={back}
+            alt="Back"
+          ></img>
         </div>
         <div>
           {currentPost.author && (

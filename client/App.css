@@ -76,7 +76,6 @@ header {
 #logo {
   width: 18rem;
   height: 4rem;
-  background-image: url("./images/logo.png");
   background-size: cover;
 }
 
@@ -108,7 +107,6 @@ header {
   #logo {
     width: 3rem;
     height: 3rem;
-    background-image: url("./images/smolLogo.png");
   }
 
   #options-button {
@@ -173,7 +171,7 @@ footer p {
 }
 
 .back-button {
-  background-image: url("./images/back.png");
+  /* background-image: url("./images/back.png"); */
   background-size: 4rem, 4rem;
   width: 4rem;
   height: 4rem;
